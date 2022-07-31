@@ -12,7 +12,7 @@ import {
 import { Line } from "react-chartjs-2";
 import ColorHash from "color-hash";
 import { useState } from "react";
-import { Select, Stack, Title } from "@mantine/core";
+import { Select, Stack } from "@mantine/core";
 
 const borderColorHash = new ColorHash();
 const backgroundColorHash = new ColorHash({ lightness: 0.5 });
@@ -118,8 +118,7 @@ const SavegameProgress = ({ savegame }: Props) => {
   };
 
   return (
-    <Stack>
-      <Title order={3}>Overview</Title>
+    <Stack sx={{ maxWidth: 1200 }}>
       <Select
         value={filter}
         onChange={(filter) => setFilter(filter!)}

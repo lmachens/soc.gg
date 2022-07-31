@@ -1,4 +1,4 @@
-import { Stack, Table, Text } from "@mantine/core";
+import { Stack, Table } from "@mantine/core";
 import { AI_MODES, FACTIONS, SavegameDeserialized } from "../../lib/savegames";
 
 type Props = {
@@ -26,7 +26,6 @@ const SavegameTeams = ({ savegame }: Props) => {
 
   return (
     <Stack spacing="xs">
-      <Text color="brand">Teams</Text>
       <Table>
         <thead>
           <tr>

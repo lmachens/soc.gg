@@ -1,4 +1,5 @@
 import { Global, MantineProvider } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
 import { ReactNode } from "react";
 
 type Props = {
@@ -52,7 +53,7 @@ const Mantine = ({ children }: Props) => {
           },
         })}
       />
-      {children}
+      <NotificationsProvider>{children}</NotificationsProvider>
     </MantineProvider>
   );
 };

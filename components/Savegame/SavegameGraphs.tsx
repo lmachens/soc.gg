@@ -8,7 +8,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { Stack, Title } from "@mantine/core";
+import { Stack } from "@mantine/core";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -70,8 +70,7 @@ const SavegameGraphs = ({ savegame }: Props) => {
   };
 
   return (
-    <Stack>
-      <Title order={3}>Graphs</Title>
+    <Stack sx={{ maxWidth: 1200 }}>
       <Bar options={options} data={data} />
     </Stack>
   );

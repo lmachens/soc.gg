@@ -21,10 +21,10 @@ export const serializeSavegame = (
   savegame: SavegameDeserialized
 ): SavegameSerialized => {
   const gameConfig = JSON.stringify(savegame.File._gameConfig);
-  const file = JSON.stringify({
+  const file = {
     ...savegame.File,
     _gameConfig: gameConfig,
-  });
+  };
   const fileData = {
     File: JSON.stringify(file),
     Metadata: JSON.stringify(savegame.Metadata),

@@ -1,0 +1,1 @@
+export const SONGS_OF_CONQUEST_CLASS_ID = 219861;

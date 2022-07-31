@@ -1,0 +1,104 @@
+{
+  "manifest_version": 1,
+  "type": "WebApp",
+  "meta": {
+    "name": "SoC.gg",
+    "author": "Leon Machens",
+    "version": "0.0.0",
+    "minimum-overwolf-version": "0.201.0",
+    "description": "Songs of Conquest Companion",
+    "dock_button_title": "SoC.gg",
+    "icon": "icons/iconMouseOver.png",
+    "icon_gray": "icons/iconMouseNormal.png",
+    "launcher_icon": "icons/launcherIcon.ico",
+    "window_icon": "icons/taskbarIcon.png"
+  },
+  "permissions": ["Hotkeys", "GameInfo", "FileSystem"],
+  "data": {
+    "start_window": "background",
+    "windows": {
+      "background": {
+        "file": "background.html",
+        "is_background_page": true,
+        "allow_local_file_access": true
+      },
+      "desktop": {
+        "file": "index.html",
+        "desktop_only": true,
+        "native_window": true,
+        "resizable": true,
+        "transparent": true,
+        "override_on_update": true,
+        "size": {
+          "width": 1200,
+          "height": 800
+        },
+        "min_size": {
+          "width": 660,
+          "height": 550
+        },
+        "allow_local_file_access": true,
+        "popup_blocker": true,
+        "mute": true,
+        "keep_window_location": true,
+        "disable_hardware_acceleration": true
+      },
+      "overlay": {
+        "file": "index.html",
+        "desktop_only": false,
+        "in_game_only": true,
+        "focus_game_takeover": "ReleaseOnLostFocus",
+        "focus_game_takeover_release_hotkey": "show_hide_app",
+        "resizable": true,
+        "transparent": true,
+        "override_on_update": true,
+        "size": {
+          "width": 1200,
+          "height": 800
+        },
+        "min_size": {
+          "width": 660,
+          "height": 550
+        },
+        "allow_local_file_access": true,
+        "popup_blocker": true,
+        "mute": true,
+        "keep_window_location": true,
+        "restrict_to_game_bounds": true
+      }
+    },
+    "game_targeting": {
+      "type": "dedicated",
+      "game_ids": [219861]
+    },
+    "game_events": [219861],
+    "launch_events": [
+      {
+        "event": "GameLaunch",
+        "event_data": {
+          "game_ids": [219861]
+        },
+        "start_minimized": false
+      }
+    ],
+    "hotkeys": {
+      "show_hide_app": {
+        "title": "Show/Hide App",
+        "action-type": "custom",
+        "default": "Ctrl+x"
+      }
+    },
+    "protocol_override_domains": {
+      "googlesyndication": "http"
+    },
+    "externally_connectable": {
+      "matches": []
+    },
+    "force_browser": "user",
+    "developer": {
+      "enable_auto_refresh": true,
+      "reload_delay": 1000,
+      "filter": "*.*"
+    }
+  }
+}
