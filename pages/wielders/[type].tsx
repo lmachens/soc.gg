@@ -14,6 +14,7 @@ import { getWielderStatsIcons, IconsDTO } from "../../lib/icons";
 import PageHead from "../../components/PageHead/PageHead";
 import SkillPopover from "../../components/Skills/SkillPopover";
 import SkillPoolsTable from "../../components/Skills/SkillPoolsTable";
+import Image from "next/image";
 
 const Wielder: NextPage<{ wielder: WielderDTO; icons: IconsDTO }> = ({
   wielder,
@@ -90,6 +91,20 @@ const Wielder: NextPage<{ wielder: WielderDTO; icons: IconsDTO }> = ({
             ))}
           </Fragment>
         ))}
+
+        {wielder.sheetSrc && (
+          <>
+            <Title order={3}>{terms.visualGuide}</Title>
+            <Image
+              src={wielder.sheetSrc}
+              width={640}
+              height={960}
+              alt="Wielder sheet by MindGames"
+              title="Wielder sheet by MindGames"
+            />
+          </>
+        )}
+
         <Title order={3}>{terms.startingSkills}</Title>
         <Group spacing="lg">
           {wielder.startingSkills.map((skill) => (
@@ -107,6 +122,7 @@ const Wielder: NextPage<{ wielder: WielderDTO; icons: IconsDTO }> = ({
           ))}
         </Group>
         <Title order={3}>Skill pool</Title>
+
         <Text size="sm" sx={{ fontStyle: "italic" }}>
           The requirements are based on the wielder level. Some skills have
           requirements on first levels, but not on higher levels.
@@ -166,6 +182,7 @@ export const getStaticProps = withStaticBase(async (context) => {
       "Tutorial/Codex/Spells/RequiredSkillMultiple",
       locale
     ),
+    visualGuide: getSiteTerm("VisualGuide", locale),
   };
 
   const icons = getWielderStatsIcons();

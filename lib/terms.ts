@@ -1,4 +1,4 @@
-import siteTermMap from "./siteTermMap.json";
+import siteTermMap from "./collections/siteTermMap.json";
 import termMap from "./collections/termMap.json";
 
 export type TermsDTO = {
